@@ -39,6 +39,8 @@ RUN cp .env.example .env && \
 # Set permissions
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
-# Expose port and start PHP-FPM
-EXPOSE 9000
-CMD ["php-fpm"]
+# Expose port 8000
+EXPOSE 8000
+
+# Start Laravel HTTP server
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
