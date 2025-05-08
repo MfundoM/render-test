@@ -34,7 +34,7 @@ RUN cp .env.example .env && \
     php artisan config:clear
 
 # Run migrations automatically
-RUN php artisan migrate --force
+# RUN php artisan migrate --force
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
